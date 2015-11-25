@@ -31,20 +31,21 @@ public class MyAdmin {
       print("Admin: ");
       this.yourAdmin = keyboard.nextLine();
 
-      if (this.yourAdmin.equals("notPassword")) {
+      if (this.yourAdmin.equals(this.adminPass)) {
         this.accepted = true;
       }
       this.count++;
-    } while ((!this.yourAdmin.equals(adminPass) &&
-            !this.yourAdmin.equals("hack") && count <= 2));
-    
-    if (this.yourAdmin.equals("hack")){
-      Backdoor backdoor = new Backdoor();
+    } while ((!this.yourAdmin.equals(this.adminPass)
+            && !this.yourAdmin.equals("hack") && count <= 2));
+
+    Backdoor backdoor = new Backdoor();
+
+    if (this.yourAdmin.equals("hack")) {
       this.accepted = backdoor.checkBD();
-      if(this.accepted){
+      if (!this.accepted) {
         print("Intruder Alert, all systems halted. Shut Down Commencing...\n");
-      }else{
-        print("You are now off the perverbial grid.");
+      } else {
+        print("You are now off the perverbial grid.\n");
       }
     }
 

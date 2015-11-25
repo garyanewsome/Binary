@@ -15,19 +15,21 @@ public class Backdoor {
 
   private boolean bdAccepted;
   private String bdPass;
+  private String userHack;
 
-  public void Backdoor() {
+  public Backdoor() {
     this.bdAccepted = false;
-    this.bdPass = "backd0or";
+    this.bdPass = "backdoor";
+    this.userHack = userHack;
   }
 
   public boolean checkBD() {
     Scanner keyboard = new Scanner(System.in);
     
-    print("Backd0or: ");
-    String userHack = keyboard.nextLine();
+    print("Backdoor: ");
+    this.userHack = keyboard.nextLine();
 
-    if (!this.bdPass.equals(userHack)) {
+    if (!this.bdPass.equals(this.userHack)) {
       println("You should have taken the blue pill.");
     }else{
       this.bdAccepted = true;

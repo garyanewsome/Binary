@@ -23,11 +23,11 @@ public class PasswordDriver {
     if (login) {
       println("Welcome.");
     } else {
-      println("Login: FAILURE!");
+      println("Login: FAILURE!\n");
       MyAdmin adminHelp = new MyAdmin();
       boolean admin = adminHelp.adminCheck();
       if (admin){
-        println("Welcome Admin.");
+        println("Welcome.");
       }else{
         println("Admin Failure, System Shut Down");
       }
